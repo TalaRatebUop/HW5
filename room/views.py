@@ -5,3 +5,5 @@ from django.http import HttpResponse
 RoomNumber=[2233,4566,222,56,22224]
 def index2(request):
     return render(request,"info.html",{"RoomNumber":RoomNumber})
+def add(request):
+    return render(request,"add.html")

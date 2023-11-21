@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<br>
+<b>RoomNumber are : </b>
+
+<ul>
+    {% for i in RoomNumber %}
+        <li style="color:white;background-color:{% cycle 'green' 'blue' %}">{{i}}</li>
+    {% endfor %}
+</ul>
+{% include "header.html" %}
+</body>
+</html>

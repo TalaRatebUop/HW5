@@ -5,14 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<a href="{% url 'addP' %}"> click here to add</a>
-{%for x in product%}
+<h1>List product is </h1>
 <ul>
-
-    <li>{{x}}</li>
-</ul>
-
-
+{% for x,v in products%}
+  <li>{{x}}---{{v}}</li>
 {% endfor %}
+  </ul>
+<a href="{% url 'add2' %}">add product</a>
 </body>
 </html>

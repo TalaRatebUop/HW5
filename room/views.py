@@ -16,12 +16,17 @@ class product(forms.Form):
     description=forms.CharField(label="Description ",label_suffix=":")
     rate=forms.DecimalField(label="Rate",label_suffix=":")
 def info2(request):
-    return render(request,"info2.html",{"products":list(enumerate(products))})
+    if 'no_product' not in request.session:
+        request.session['no_product'] = 0
+    return render(request,"info2.html",{"products":list(enumerate(products)),"Noproduct":request.session['no_product']})
 def add2(request):
     if request.method == 'POST':
         b=product(request.POST)
         if b.is_valid():
             products.append(request.POST)
+            if 'no_product' not in request.session:
+                request.session['no_product']=0
+            request.session['no_product'] += 1
             return redirect(reverse("info2"))
         else:
             return render(request, "add2.html", {"form": b})

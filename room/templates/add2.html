@@ -6,6 +6,7 @@
 </head>
 <body>
 <a href="{% url 'info2' %}">List name data</a>
+
 <form action="{% url 'add2' %}" method="post">
     <table>
     {{form.as_table}}

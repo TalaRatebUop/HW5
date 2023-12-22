@@ -7,7 +7,6 @@ class ClientType(models.Model):
     description=models.CharField(null=False,max_length=25)
     def __str__(self):
         return self.name
-
 class Client(models.Model):
     cid=models.IntegerField(primary_key=True,default=0)
     name=models.CharField(max_length=20)

@@ -7,11 +7,25 @@
 <body>
 <p>No of products: {{Noproduct}} </p>
 <h1>List product is </h1>
-<ul>
-{% for x,v in products%}
-  <li>{{x}}---{{v}}</li>
-{% endfor %}
-  </ul>
-<a href="{% url 'add2' %}">add product</a>
+<h1>List Name is </h1>
+<table border="1" >
+    <tr>
+        <td>Name:</td>
+        <td>Id:</td>
+        <td>Email</td>
+    </tr>
+    {% for x in ClientInfoLists%}
+    <tr>
+        <td>{{x}}</td>
+        <td>{{x.pk}}</td>
+        <td>{{x.email}}</td>
+
+    </tr>
+ {% endfor %}
+
+</table>
+
+
+<a href="{% url 'add2' %}">add names</a>
 </body>
 </html>

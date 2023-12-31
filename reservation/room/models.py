@@ -8,7 +8,7 @@ class ClientType(models.Model):
     def __str__(self):
         return self.name
 class Client(models.Model):
-    cid=models.IntegerField(primary_key=True,default=0)
+    cid=models.AutoField(primary_key=True,default=0)
     name=models.CharField(max_length=20)
     gender_ch=[(1,"Female"),(2,"Male")]
     gender=models.IntegerField(choices=gender_ch)
@@ -32,3 +32,9 @@ class Order(models.Model):
     ShippingDate = models.DateField()
     def __int__(self):
         return self.Oid
+
+
+
+
+
+

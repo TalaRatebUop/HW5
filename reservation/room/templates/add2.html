@@ -5,12 +5,15 @@
     <title>Title</title>
 </head>
 <body>
+{% load crispy_forms_tags %}
 <a href="{% url 'info2' %}">List name data</a>
 
 <form action="{% url 'add2' %}" method="post">
     <table>
     {{form.as_table}}
+          {{ form|crispy }}
     {% csrf_token %}
+
 </table>
     <input type="submit" value="submit"/>
 </form>

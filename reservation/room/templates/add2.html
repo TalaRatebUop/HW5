@@ -10,7 +10,7 @@
 
 <form action="{% url 'add2' %}" method="post">
     <table>
-    {{form.as_table}}
+
           {{ form|crispy }}
     {% csrf_token %}
 
